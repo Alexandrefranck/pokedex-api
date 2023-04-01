@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex - Vanilla JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </head>
+
+  <body
+    class="py-5 px-3 px-md-5 min-vh-100"
+    style="
+      background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.63) 0%,
+          rgba(0, 0, 0, 0.63) 100%
+        ),
+        #33a165;
+    "
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-1">
+          <img
+            id="goprev"
+            src="assets/icons/chevron-left.svg"
+            style="height: 50px"
+            alt=""
+          />
+        </div>
+        <div class="col-10">
+          <div id="shuffle">
+            <img
+              id="shuffle"
+              src="assets/icons/shuffle.svg"
+              style="height: 50px"
+              alt=""
+            />
+          </div>
+          <div id="hero" class="mt-5 d-flex flex-column justify-content-end">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="h-100 d-flex flex-column justify-content-end pb-5">
+                  <div class="row mb-3">
+                    <img
+                      id="pokeTypeImg"
+                      class="col-2 d-none d-lg-block"
+                      src="assets/type/grass.svg"
+                    />
+                    <div class="text-white col-10">
+                      <h5 id="pokeType" class="ms-1 mb-0 text-uppercase">
+                        grass
+                      </h5>
+                      <h1 id="pokeName" class="text-capitalize">bulbasaur</h1>
+                    </div>
+                    <div class="d-flex text-white justify-content-between">
+                      <h5>Height</h5>
+                      <h5 id="pokeHeight">0.7M</h5>
+                    </div>
+                    <div class="d-flex text-white justify-content-between">
+                      <h5>Weight</h5>
+                      <h5 id="pokeWeight">6.9KG</h5>
+                    </div>
+                    <div class="d-flex text-white justify-content-between">
+                      <h5>Abilities</h5>
+                      <span id="pokeAbilities" class="text-capitalize">Overgow,Chlorophyll</span>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <div
+                    class="col-lg-6 text-center text-lg-end position-relative"
+                  >
+                  <span id="bgId">#001</span>
+                    <img
+                      id="pokeImg"
+                      class="img-fluid ps-lg-3 animate__animated animate__bounce"
+                      src="assets/pokemon/1.png"
+                      alt="Pokemon"
+                      style="--animate-duration: 0.8s"
+                      width="475"
+                      height="475"
+                    />
+                  </div>
+            </div>
+          </div>
+          <div id="stats" class="text-white row align-items-center mt-5">
+            <div class="col-lg-2 text-center text-lg-start">
+                <h1 class="fw-bold"> Stats</h1>
+            </div>
+            <div class="col-lg-10">
+                <div id="pokeStats" class="ps-lg-5 w-100 mt-4 mt-lg-0">
+                    <div class="pb-4 row align-items-center">
+                        <span class="text-capitalize col-4 col-lg-3 m-0"> hp</span>
+                        <div class="progress p-0 col-7 col-lg-8 bg-transparent" role="progressbar" aria-label="Basic example" aria-valuenow="45" aria-valuemin="0" aria-valuemax="150">
+                            <div class="progress-bar animate__animated animate__slideInLeft bg-white" style="width: 30%;"></div>
+                        </div>
+                        <h5 class="col-1 text-end m-0">45</h5>
+                    </div>
+                    <div class="pb-4 row align-items-center"><span class="text-capitalize col-4 col-lg-3 m-0"> attack</span>
+                        <div class="progress p-0 col-7 col-lg-8 bg-transparent" role="progressbar" aria-label="Basic example" aria-valuenow="45" aria-valuemin="0" aria-valuemax="150">
+                            <div class="progress-bar animate__animated animate__slideInLeft bg-white" style="width: 33%;"></div>
+                        </div>
+                        <h5 class="col-1 text-end m-0">49</h5></div>
+                    <div class="pb-4 row align-items-center"><span class="text-capitalize col-4 col-lg-3 m-0"> defense</span>
+                        <div class="progress p-0 col-7 col-lg-8 bg-transparent" role="progressbar" aria-label="Basic example" aria-valuenow="45" aria-valuemin="0" aria-valuemax="150">
+                            <div class="progress-bar animate__animated animate__slideInLeft bg-white" style="width: 33%;"></div>
+                        </div>
+                        <h5 class="col-1 text-end m-0">49</h5></div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <img
+            id="gonext"
+            src="assets/icons/chevron-right.svg"
+            style="height: 50px"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
